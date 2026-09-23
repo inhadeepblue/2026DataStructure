@@ -1,0 +1,10 @@
+# artists = []
+artists = list()
+print(artists)
+artists.append("리센느")
+print(artists)
+artists.append("핑클")
+artists.append("데이식스")
+print(artists)
+print(artists.pop(1))
+print(artists)
