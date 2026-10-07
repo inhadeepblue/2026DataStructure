@@ -1,20 +1,20 @@
-class Pokemon:
-    # def __init__(self, hp, type, name):
-    def __init__(self, hp, type, name=None):  # default parameter 값으로 None 할당
-        self.name = name
-        self.hp = hp
-        self.type = type
+class Node:
+    def __init__(self, data, next=None):
+        self.data = data
+        self.next = next
 
-    def attack(self):
-        print(f"{self.name}이(가) 공격 시전")
 
-pikachu = Pokemon(100, "Electric", "피카츄")
-squirtle = Pokemon(200, "Water", "꼬부기")
-charmander = Pokemon(150, "Fire")  # default parameter 안쓰면 error
-print(charmander.name)  # default parameter로 할당된 None 출력
-print(pikachu.type)
-charmander.name = "파이리"  # 위에서 객체 생성된 후 name 속성에 추후 할당
-print(squirtle.hp)
-print(charmander.name)
-squirtle.attack()
-charmander.attack()
+class LinkedList:
+    def __init__(self):
+        """
+        연결 리스트 초기화 함수
+        """
+        pass
+
+    def append(self, data):
+        """
+        노드 추가 함수
+        :param data: 노드 데이터 값
+        :return: None
+        """
+        pass
