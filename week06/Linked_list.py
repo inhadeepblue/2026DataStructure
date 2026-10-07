@@ -5,6 +5,9 @@ class Pokemon:
         self.hp = hp
         self.type = type
 
+    def attack(self):
+        print(f"{self.name}이(가) 공격 시전")
+
 pikachu = Pokemon(100, "Electric", "피카츄")
 squirtle = Pokemon(200, "Water", "꼬부기")
 charmander = Pokemon(150, "Fire")  # default parameter 안쓰면 error
@@ -13,3 +16,5 @@ print(pikachu.type)
 charmander.name = "파이리"  # 위에서 객체 생성된 후 name 속성에 추후 할당
 print(squirtle.hp)
 print(charmander.name)
+squirtle.attack()
+charmander.attack()
