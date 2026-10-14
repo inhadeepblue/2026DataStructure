@@ -1,17 +1,36 @@
-isStudent = True
-year = 1
+class Node:
+    def __init__(self, data, next=None):
+        self.data = data
+        self.next = next
 
-# if isStudent:
-#     print("Welcome to Student")
-# else:
-#     print("Welcome to teacher")
 
-while isStudent:
-    if year != 3:
-        print(f"{year}학년 입니다")
-        year = year + 1
-    else:
-        print(f"{year}학년 입니다")
-        print("곧 졸업합니다")
-        # break  # 가장 가까운 반복문(while, for)을 탈출
-        isStudent = False  # while 구문의 조건을 False로 만들어 반복문 탈출
+class LinkedList:
+    def __init__(self):
+        """
+        연결 리스트 초기화 함수
+        """
+        self.head = None
+
+
+    def append(self, data):
+        """
+        노드 추가 함수
+        :param data: 노드 데이터 값
+        :return: None
+        """
+        if not self.head:
+            self.head = Node(data)
+            return
+        current = self.head
+        while current.next:
+            current = current.next
+        current.next = Node(data)
+
+
+ll = LinkedList()
+ll.append('꼬부기')
+ll.append('피카츄')
+ll.append('파이리')
+# print(ll.head.data)
+# print(ll.head.next.data)
+print(ll.head.next.next.data)
