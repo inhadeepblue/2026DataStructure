@@ -9,7 +9,10 @@ def gugudan(d):
     for i in range(1, 10):
         print(f"{d} * {i} = {d*i}")
 
-print('구구단 & 팩토리얼')
-number = int(input("정수 입력 : "))
-gugudan(number)
-factorial(number)
+choice = input('1) 구구단 2) 팩토리얼 : ')
+if choice == '1':
+    dan = int(input("단(2~9) 입력 : "))
+    gugudan(dan)
+else:
+    number = int(input("정수 입력 : "))
+    factorial(number)
