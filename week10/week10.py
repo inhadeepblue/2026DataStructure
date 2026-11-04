@@ -1,24 +1,55 @@
-def factorial(n):
-    result = 1
-    for i in range(1,n+1):
-        result = result * i
-    print(f"{n}! = {result}")
+class Node:
+    def __init__(self, data, next=None):
+        self.data = data
+        self.next = next
 
-def gugudan(d):
-    print(f"{d}단!")
-    for i in range(1, 10):
-        print(f"{d} * {i} = {d*i}")
 
-while True:
-    choice = input('1) 구구단 2) 팩토리얼 3) 종료 : ')
-    if choice == '1':
-        dan = int(input("단(2~9) 입력 : "))
-        gugudan(dan)
-    elif choice == '2':
-        number = int(input("정수 입력 : "))
-        factorial(number)
-    elif choice == '3':
-        print("프로그램 종료")
-        break
-    else:  # 1, 2, 3외의 메뉴
-        print("메뉴에서 골라주세요")
+class LinkedList:
+    def __init__(self):
+        """
+        연결 리스트 초기화 함수
+        """
+        self.head = None
+
+
+    def append(self, data):
+        """
+        노드 추가 함수
+        :param data: 노드 데이터 값
+        :return: None
+        """
+        if not self.head:  # 최초 노드 연결용. 단 1회 실행
+            self.head = Node(data)
+            return
+        current = self.head  # 첫 번째 노드의 위치를 받은 지역변수 current
+        while current.next:  # 가르키는 다음 노드가 존재하면 반복.
+            current = current.next  # current를 다음 노드로 이동
+        current.next = Node(data)  # while문 종료(마지막 노드를 찾음) 후 새 노드 생성. 그리고 새 노드를 마지막 노드에 연결.
+
+
+    def search(self, target):
+        current = self.head
+        while current.next:
+            if current.data == target:
+                return True  # 찾고자 하는 노드를 찾음
+            else:
+                current = current.next  # 노드 이동
+        return False
+
+
+    def __str__(self):  # 매직메서드로 print 함수등에 출력할 내용을 정리
+        n = self.head
+        while n is not None:
+            print(n.data)
+            n = n.next  # 다음 노드로 이동
+        return '[끝]'
+
+
+pokemons = LinkedList()
+pokemons.append('꼬부기')  # head
+pokemons.append('피카츄')
+pokemons.append('파이리')
+pokemons.append('뮤')
+print(pokemons)  # <__main__.LinkedList object at 0x000002BDD72C7230>
+print(pokemons.search('라이츄'))
+print(pokemons.search('파이리'))
