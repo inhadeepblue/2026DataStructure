@@ -1,5 +1,4 @@
 import random
-from idlelib import search
 
 
 class Node:
@@ -46,6 +45,10 @@ class LinkedList:
         return False
 
 
+    def remove(self, data):
+        pass
+
+
     def __str__(self):  # 매직메서드로 print 함수등에 출력할 내용을 정리
         n = self.head
         while n is not None:
@@ -54,14 +57,11 @@ class LinkedList:
         return '[끝]'
 
 
-lotto_number_list = LinkedList()
-# 중복 값이 나올 수 있음 (주의)
-for i in range(6):  # 0~5
-    lotto_number = random.randint(1, 45)
-    lotto_number_list.append(lotto_number)
-
-print(lotto_number_list)  # __str__
-print(lotto_number_list.search(33))
-
-help(print)  # print 함수 매뉴얼
-help(LinkedList.append)  # 연결리스트 클래스의 멤버함수 append 매뉴얼
+pokemon_list = LinkedList()
+pokemon_list.append('꼬부기')
+pokemon_list.append('피카츄')
+pokemon_list.append('뮤')
+pokemon_list.append('파이리')
+print(pokemon_list)
+pokemon_list.append('라이츄')
+print(pokemon_list)
