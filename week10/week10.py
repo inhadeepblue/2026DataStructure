@@ -1,4 +1,6 @@
 import random
+from idlelib import search
+
 
 class Node:
     def __init__(self, data, next=None):
@@ -30,6 +32,11 @@ class LinkedList:
 
 
     def search(self, target):
+        """
+        노드 검색 함수
+        :param target: 찾고자 하는 노드 데이터 값
+        :return: True or False
+        """
         current = self.head
         while current.next:
             if current.data == target:
@@ -55,3 +62,6 @@ for i in range(6):  # 0~5
 
 print(lotto_number_list)  # __str__
 print(lotto_number_list.search(33))
+
+help(print)  # print 함수 매뉴얼
+help(LinkedList.append)  # 연결리스트 클래스의 멤버함수 append 매뉴얼
