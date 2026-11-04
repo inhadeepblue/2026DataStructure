@@ -42,7 +42,7 @@ class LinkedList:
     def __str__(self):  # 매직메서드로 print 함수등에 출력할 내용을 정리
         n = self.head
         while n is not None:
-            print(n.data)
+            print(n.data, end=" ")
             n = n.next  # 다음 노드로 이동
         return '[끝]'
 
@@ -52,6 +52,6 @@ lotto_number_list = LinkedList()
 for i in range(6):  # 0~5
     lotto_number = random.randint(1, 45)
     lotto_number_list.append(lotto_number)
-    print(lotto_number, end=" ")
 
+print(lotto_number_list)  # __str__
 print(lotto_number_list.search(33))
