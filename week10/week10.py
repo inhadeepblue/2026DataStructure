@@ -1,6 +1,3 @@
-import random
-
-
 class Node:
     def __init__(self, data, next=None):
         self.data = data
@@ -27,25 +24,30 @@ class LinkedList:
         current = self.head  # 첫 번째 노드의 위치를 받은 지역변수 current
         while current.next:  # 가르키는 다음 노드가 존재하면 반복.
             current = current.next  # current를 다음 노드로 이동
-        current.next = Node(data)  # while문 종료(마지막 노드를 찾음) 후 새 노드 생성. 그리고 새 노드를 마지막 노드에 연결.
+            current.next = Node(data)  # while문 종료(마지막 노드를 찾음) 후 새 노드 생성. 그리고 새 노드를 마지막 노드에 연결.
 
 
     def search(self, target):
         """
         노드 검색 함수
         :param target: 찾고자 하는 노드 데이터 값
-        :return: True or False
+        :return: 문자열
         """
         current = self.head
         while current.next:
             if current.data == target:
-                return True  # 찾고자 하는 노드를 찾음
+                return f"{target}을(를) 찾았습니다~"  # target을(를) 찾았습니다~
             else:
                 current = current.next  # 노드 이동
-        return False
+        return  f"{target}을(를) 찾을 수 없습니다!"  # target을(를) 찾을 수 없습니다!
 
 
-    def remove(self, data):
+    def remove(self, target):
+        """
+        노드 제거 함수
+        :param target: 제거할 데이터 값
+        :return: None
+        """
         pass
 
 
@@ -65,3 +67,5 @@ pokemon_list.append('파이리')
 print(pokemon_list)
 pokemon_list.append('라이츄')
 print(pokemon_list)
+print(pokemon_list.search('뮤'))
+print(pokemon_list.search('리자몽'))
