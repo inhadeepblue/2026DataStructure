@@ -1,11 +1,23 @@
-subjects = ["자료구조", "웹프로그래밍", "인공지능개론"]
-# print(len(subjects))
+class Stack:
+    def __init__(self):
+        self.items = list()   # self.items = []
 
-# for subject in subjects:
-#     print(subject, end=' ')
+    def push(self, item):
+        self.items.append(item)
 
-# for i in range(3):
-#     print(subjects[i], end=' ')
+    def pop(self):
+        return self.items.pop()
 
-for i in range(len(subjects)):
-    print(subjects[i], end=' ')
+    def peek(self):
+        #return self.items[-1]
+        return self.items[len(self.items)-1]
+
+subjects = Stack()
+artists = Stack()
+artists.push("핑클")
+subjects.push("웹프로그래밍")
+subjects.push("자료구조")
+artists.push("SES")
+print(subjects.pop())
+print(subjects.peek())  # top 원소 확인
+print(artists.peek())
