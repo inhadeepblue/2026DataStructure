@@ -10,7 +10,6 @@ class Stack:
         """
         self.items.append(item)
 
-
     def pop(self):
         """
         스택의 마지막 원소(top이 가리키고 있는) 리턴하고 삭제하는 함수
@@ -53,3 +52,5 @@ print(artists.peek())
 print(artists.size())
 print(subjects.size())
 print(artists.is_empty())
+#help(Stack.pop)
+help(Stack)  # Docstring
