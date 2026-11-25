@@ -1,21 +1,34 @@
-class Human:
-    def __init__(self, gender, name="무명"):
-        self.name = name
-        self.gender = gender
-        self.age = 1
-
-    def eat(self, food):
-        print(f"{self.name}이(가) {food}을(를) 먹습니다")
-
-    def __str__(self):
-        return f"{self.name}은(는) {self.age}살이고 {self.gender}성 입니다."
+from encodings import search_function
 
 
-kyw = Human("여", "강예원")
-ljm = Human("여")
-print(kyw)
-print(ljm)
-ljm.name = "이정미"
-print(ljm.name)
-kyw.eat("햄버거")
-print(ljm)
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class Stack:
+    def __init__(self):
+        self.top = None
+
+    def push(self, data):
+        node = Node(data)
+        if self.top is None:
+            self.top = node
+        else:
+            node.next = self.top
+            self.top = node
+
+    def pop(self):
+        if self.top is None:
+            raise IndexError('스택이 비어 있습니다. 삭제 불가!')
+        popped_node = self.top
+        self.top = self.top.next
+        return popped_node.data
+
+
+subjects = Stack()
+subjects.push("자료구조")
+subjects.push("웹프로그래밍")
+print(subjects.pop())
+print(subjects.pop())
+print(subjects.pop())
